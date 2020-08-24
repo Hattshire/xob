@@ -212,6 +212,10 @@ Display_context init(Style conf)
     return dc;
 }
 
+void display_context_destroy(Display_context dc) {
+    XCloseDisplay(dc.x.display);
+}
+
 /* PUBLIC Show a bar filled at value/cap in normal or alternative mode */
 Display_context show(Display_context dc, int value, int cap,
                      Overflow_mode overflow_mode, Show_mode show_mode)
